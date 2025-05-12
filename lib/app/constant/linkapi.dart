@@ -1,8 +1,5 @@
 // ignore_for_file: constant_identifier_names
 
-//const String linkServerName = "https://pixelatstudio.com/Univ";
-//const String linkimageRoot = "https://pixelatstudio.com/Univ/upload";
-
 const String linkServerName = "http://10.0.2.2/Univ";
 const String linkimageRoot = "http://10.0.2.2/Univ/upload";
 
