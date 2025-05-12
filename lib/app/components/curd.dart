@@ -4,10 +4,6 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
 
-//String _basicAuth = 'Basic ' + base64Encode(utf8.encode('Univ:univ1000'));
-
-//Map<String, String> myheaders = {'authorization': _basicAuth};
-
 class Curd {
   getRequest(String url) async {
     try {
@@ -28,7 +24,7 @@ class Curd {
   postRequest(String url, Map data) async {
     try {
       var response =
-          await http.post(Uri.parse(url), body: data,/* headers: myheaders*/);
+          await http.post(Uri.parse(url), body: data);
       if (response.statusCode == 200) {
         var responsebody = jsonDecode(response.body);
         return responsebody;
@@ -46,7 +42,7 @@ class Curd {
     var stream = http.ByteStream(file.openRead());
     var multipatrFile = http.MultipartFile("file", stream, length,
         filename: basename(file.path));
-    //request.headers.addAll(myheaders);
+    
     request.files.add(multipatrFile);
     data.forEach((key, value) {
       request.fields[key] = value;
